@@ -216,6 +216,7 @@ export class LinkedInProfileScraper {
       statusLog(logSection, `Launching puppeteer in the ${this.options.headless ? 'background' : 'foreground'}...`)
 
       this.browser = await puppeteer.launch({
+        product: 'firefox',
         headless: this.options.headless,
         args: [
           ...(this.options.headless ? '---single-process' : '---start-maximized'),
